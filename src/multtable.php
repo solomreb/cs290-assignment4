@@ -25,9 +25,7 @@ function validateInput(){
 		}
 
 }
-
-validateInput();
-
+function createMultTable(){
 	$a = $_GET["min-multiplicand"];
 	$b = $_GET["max-multiplicand"];
 	$c = $_GET["min-multiplier"];
@@ -54,7 +52,12 @@ validateInput();
     }
     echo '</table>';
 
-		
+}
+
+validateInput();
+createMultTable();
+
+	
 	
 
 ?>
