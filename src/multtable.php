@@ -6,8 +6,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors',1);
 
-echo "hello<br>";
-
 function validateInput(){
 	$params = array('min-multiplicand' => $_GET["min-multiplicand"], 'max-multiplicand' =>$_GET["max-multiplicand"], 'min-multiplier' => $_GET["min-multiplier"], 'max-multiplier' => $_GET["max-multiplier"]);
 
@@ -29,28 +27,34 @@ function validateInput(){
 }
 
 validateInput();
-echo "validated";
 
 	$a = $_GET["min-multiplicand"];
-
 	$b = $_GET["max-multiplicand"];
 	$c = $_GET["min-multiplier"];
 	$d = $_GET["max-multiplier"];
-
-	echo '<table>';		
-	
-	for($i = $a; $i <= $b; $i++){ //row loop
-		echo '<tr>';
-		for ($j = $c; $j <= $d; $j++){ //column loop
-			echo '<td>';
-			echo $i*$j;
+	echo "<h2> Multiplication Table </h2>";
+	echo "<table border='1' width = '70%'>";		
+	echo '<tr><td></td>'; //empty top left box
+	for ($headerCol = $c; $headerCol <=$d; $headerCol++){//header loop
+		echo '<td align="center">';
+		echo $headerCol;
+		echo '</td>';
+	}
+	echo '</tr>';
+	for($row = $a; $row <= $b; $row++){ //row loop
+		echo '<tr><td align="center">';
+		echo $row;
+		echo '</td>';
+		for ($col = $c; $col <= $d; $col++){ //column loop
+			echo '<td align="center">';
+			echo $row * $col;
 			echo '</td>';
 		}
 		echo '</tr>';
     }
     echo '</table>';
 
-	
+		
 	
 
 ?>
