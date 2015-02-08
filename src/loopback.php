@@ -1,21 +1,23 @@
+<!-- Becky Solomon, CS 290 Assignment 4, loopback.php-->
 <!DOCTYPE html>
 <html>
 <body>
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors',1);
 
-$method =  $_SERVER['REQUEST_METHOD'] . "\"";
+$method =  $_SERVER['REQUEST_METHOD'];
 
-if ($_SERVER['REQUEST_METHOD'] == "GET") {
-  $params = json_encode($_GET);
+if ($method == "GET") {
+  $params = $_GET;
 } 
-else if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $params = json_encode($_POST);
+else if ($method == "POST") {
+  $params = $_POST;
 }
 
-echo "{\"Type\":\"" . $method . ",\"parameters\":" . $params ;
+$result = [] ;
+$result["Type"] = $method;
+$result["parameters"] = $params;
+echo json_encode($result);
 
 ?>
 
