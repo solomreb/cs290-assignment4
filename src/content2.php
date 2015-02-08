@@ -4,7 +4,7 @@
 	<head>	
 	<title>CS290Assignment4</title>
 	</head>
-	<h1> CS 290 Assignment 4: Content1 </h1>
+	<h1> CS 290 Assignment 4: Content2 </h1>
 <body>
 
 <?php
