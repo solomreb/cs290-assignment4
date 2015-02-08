@@ -1,7 +1,6 @@
 <?php
 session_start();
-
-if(!isset($_GET['loggedin']) || $_GET['loggedin'] === false || session_status() != PHP_SESSION_ACTIVE) {	
+if(!(isset($_GET['loggedin'])) || $_GET['loggedin'] === 'false') {	
 	echo "You are currently logged out<br>";
 	$_SESSION = array();
 	session_destroy();
@@ -21,7 +20,7 @@ else{
 	
 	<div name="login">
 	<h2>Login</h2>
-	<form method="post" name="login" action="content1.php">
+	<form method="post" name="login" action="content1.php?">
 		<h3>Username:</h3> <input type="text" name="username">
 		<input type="submit" value="Login">
 	</form>
